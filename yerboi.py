@@ -16,17 +16,15 @@ pass_box.send_keys(Keys.ENTER)
 # looks for skip ad box
 video_playing = driver.find_elements_by_class_name('ytp-ad-skip-button-container')
 x = 10
-while not video_playing and x <= 10:
+while not video_playing and x <= 1:
     video_playing = driver.find_elements_by_class_name('ytp-ad-skip-button-container')
     print('no ad to skip!')
-else:
+
+    else:
     print('ad found!')
     time.sleep(6)
     ad_button = driver.find_element_by_class_name('ytp-ad-skip-button-container')
     ad_button.click()
     driver.find_elements_by_class_name('ytp-ad-skip-button-container')
     x = x-1
-    if x == 0:
-        break
-    else:
-        continue
+    continue
